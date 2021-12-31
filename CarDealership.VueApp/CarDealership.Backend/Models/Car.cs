@@ -1,4 +1,6 @@
-﻿namespace CarDealership.Backend.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CarDealership.Backend.Models
 {
     public class Car
     {
