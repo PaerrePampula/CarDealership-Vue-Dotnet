@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cardealership.vueapp", "CarDealership.VueApp\cardealership.vueapp.esproj", "{1A988D38-075C-4AB9-81F4-776901571063}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealership.Backend", "CarDealership.Backend\CarDealership.Backend.csproj", "{F450F664-6FD4-4C6D-BAD8-AD76BFFCB3E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealership.Backend", "CarDealership.Backend\CarDealership.Backend.csproj", "{D0CE44E7-66F0-46E2-8468-1B5142AA8089}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,10 +19,10 @@ Global
 		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{F450F664-6FD4-4C6D-BAD8-AD76BFFCB3E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F450F664-6FD4-4C6D-BAD8-AD76BFFCB3E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F450F664-6FD4-4C6D-BAD8-AD76BFFCB3E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F450F664-6FD4-4C6D-BAD8-AD76BFFCB3E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
