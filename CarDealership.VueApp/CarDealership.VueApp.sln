@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cardealership.vueapp", "CarDealership.VueApp\cardealership.vueapp.esproj", "{1A988D38-075C-4AB9-81F4-776901571063}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarDealership.Backend", "CarDealership.Backend\CarDealership.Backend.csproj", "{D0CE44E7-66F0-46E2-8468-1B5142AA8089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarDealership.Backend", "CarDealership.Backend\CarDealership.Backend.csproj", "{D0CE44E7-66F0-46E2-8468-1B5142AA8089}"
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "cardealership.vue", "CarDealership.Vue\cardealership.vue.esproj", "{F715B863-7D66-4360-BC66-4570E72FBDAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,16 +13,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1A988D38-075C-4AB9-81F4-776901571063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1A988D38-075C-4AB9-81F4-776901571063}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1A988D38-075C-4AB9-81F4-776901571063}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1A988D38-075C-4AB9-81F4-776901571063}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0CE44E7-66F0-46E2-8468-1B5142AA8089}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F715B863-7D66-4360-BC66-4570E72FBDAC}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-# cardealership.vueapp
+# cardealership.vue
 
 ## Project setup
 ```

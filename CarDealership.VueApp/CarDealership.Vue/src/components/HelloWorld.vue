@@ -4,22 +4,20 @@
             Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
         </div>
 
-        <div v-if="post" class="content">
+        <div v-if="post" class="content container">
             <table>
                 <thead>
                     <tr>
-                        <th>Date</th>
-                        <th>Temp. (C)</th>
-                        <th>Temp. (F)</th>
-                        <th>Summary</th>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Year</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="forecast in post" :key="forecast.date">
-                        <td>{{ forecast.date }}</td>
-                        <td>{{ forecast.temperatureC }}</td>
-                        <td>{{ forecast.temperatureF }}</td>
-                        <td>{{ forecast.summary }}</td>
+                    <tr v-for="car in post.data" :key="car.key">
+                        <td>{{ car.brand }}</td>
+                        <td>{{ car.model }}</td>
+                        <td>{{ car.year }}</td>
                     </tr>
                 </tbody>
             </table>
@@ -51,8 +49,8 @@
                 this.post = null;
                 this.loading = true;
 
-                fetch('WeatherForecast')
-                    .then(r => r.json())
+                fetch('https://localhost:44301/api/Car')
+                    .then(res => res.json())
                     .then(json => {
                         this.post = json;
                         this.loading = false;
