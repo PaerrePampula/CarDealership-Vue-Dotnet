@@ -2,9 +2,15 @@
     <div class="container">
 
         <div v-if="loading" class="loading border">
-            .Net backend is currently launching, please wait...
+            .Net API backend is currently launching, please wait...
         </div>
         <div v-if="post" class="content container">
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAdd" aria-expanded="false" aria-controls="collapseAdd" style="margin:5px;">
+                Add a new car
+            </button>
+            <AddCar class="collapse" id="collapseAdd"></AddCar>
+
+
             <table class="table table-striped border">
                 <tr class="table-secondary">
                     <th>
@@ -30,11 +36,13 @@
 </template>
 <script>
     import Car from './Car.vue'
+    import AddCar from './AddCar.vue'
     export default {
         name: 'Cars',
         emits: ['delete-car'],
         components: {
             Car,
+            AddCar,
         },
         data() {
             return {
