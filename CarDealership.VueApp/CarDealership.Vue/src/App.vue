@@ -1,12 +1,12 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <CarDealership msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import CarDealership from './components/CarDealership.vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'jquery/src/jquery.js'
 import 'bootstrap/dist/js/bootstrap.min.js'
@@ -14,7 +14,7 @@ import 'bootstrap/dist/js/bootstrap.min.js'
 export default {
   name: 'App',
   components: {
-    HelloWorld
+      CarDealership
   }
 }
 </script>

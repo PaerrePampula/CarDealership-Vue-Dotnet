@@ -1,34 +1,43 @@
 <template>
-    <div class="post">
+    <div class="container">
         <div v-if="loading" class="loading">
             Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
         </div>
 
         <div v-if="post" class="content container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Brand</th>
-                        <th>Model</th>
-                        <th>Year</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="car in post.data" :key="car.key">
-                        <td>{{ car.brand }}</td>
-                        <td>{{ car.model }}</td>
-                        <td>{{ car.year }}</td>
-                    </tr>
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>
+                        <label>Brand</label>
+                    </th>
+                    <th>
+                        <label>Model</label>
+                    </th>
+                    <th>
+                        <label>Year</label>
+                    </th>
+                    <th>
+
+                    </th>
+                </tr>
+                <tbody v-for="car in post.data" :key="car.key">
+                    <Car @delete-car="$emit('delete-car', car.key)" :car="car" />
                 </tbody>
             </table>
         </div>
     </div>
+
 </template>
-
-<script lang="js">
-    import Vue from 'vue';
-
-    export default Vue.extend({
+<script>
+    import Car from './Car.vue'
+    export default {
+        name: 'Cars',
+        props: {
+            cars: Array,
+        },
+        components: {
+            Car,
+        },
         data() {
             return {
                 loading: false,
@@ -56,7 +65,8 @@
                         this.loading = false;
                         return;
                     });
-            }
+            },
         },
-    });
+        emits: ['delete-car'],
+    }
 </script>
