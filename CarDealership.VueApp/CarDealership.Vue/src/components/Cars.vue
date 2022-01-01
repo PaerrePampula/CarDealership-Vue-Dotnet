@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-        <div v-if="loading" class="loading">
-            Loading... Please refresh once the ASP.NET backend has started. See <a href="https://aka.ms/jspsintegrationvue">https://aka.ms/jspsintegrationvue</a> for more details.
-        </div>
 
+        <div v-if="loading" class="loading border">
+            .Net backend is currently launching, please wait...
+        </div>
         <div v-if="post" class="content container">
             <table class="table table-striped border">
                 <tr class="table-secondary">
@@ -20,8 +20,8 @@
 
                     </th>
                 </tr>
-                <tbody v-for="car in post.data" :key="car.key">
-                    <Car @delete-car="$emit('delete-car', car.key)" :car="car" />
+                <tbody v-for="car in cars" :key="car.key">
+                    <Car @delete-car="deleteCar" :car="car" />
                 </tbody>
             </table>
         </div>
@@ -32,14 +32,13 @@
     import Car from './Car.vue'
     export default {
         name: 'Cars',
-        props: {
-            cars: Array,
-        },
+        emits: ['delete-car'],
         components: {
             Car,
         },
         data() {
             return {
+                cars: [],
                 loading: false,
                 post: null
             };
@@ -63,10 +62,17 @@
                     .then(json => {
                         this.post = json;
                         this.loading = false;
+                        this.cars = json.data;
                         return;
                     });
             },
+            deleteCar(key) {
+                if (confirm('Are you sure you want to delete?')) {
+                    console.log(key);
+                    this.cars = this.cars.filter((car) => car.key !== key);
+                }
+            }
         },
-        emits: ['delete-car'],
+
     }
 </script>

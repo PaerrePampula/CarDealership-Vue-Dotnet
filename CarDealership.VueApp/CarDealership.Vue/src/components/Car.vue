@@ -1,5 +1,5 @@
 <template>
-    <tr>
+    <tr class="border" @dblclick="$emit('edit',car.key)">
         <td>
             {{ car.brand }}
         </td>
@@ -10,8 +10,8 @@
             {{ car.year }}
         </td>
         <td>
-            <button @click="onDelete(car.key)" class="btn btn-danger btn-sm">Delete</button>
-            <a asp-page="Edit" asp-route-id="@item.Id" class="btn btn-success btn-sm text-white">Edit</a>
+            <button @click="$emit('delete-car', car.key)" class="btn btn-danger btn-sm">Delete</button>
+            <a @click="toggleEdit(car.key)" class="btn btn-success btn-sm text-white">Edit</a>
         </td>
     </tr>
 </template>
@@ -22,11 +22,6 @@
         props: {
             car: Object,
         },
-        methods: {
-            onDelete(id)
-            {
-                this.$emit('delete-car', id)
-            },
-        },
+
  }
 </script>

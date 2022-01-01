@@ -1,6 +1,6 @@
 <template>
     <div class="post">
-        <Cars @delete-car="deleteCar"></Cars>
+        <Cars ></Cars>
     </div>
 </template>
 
@@ -14,12 +14,7 @@
         },
 
         methods: {
-            deleteCar(key) {
-                if (confirm('Are you sure you want to delete?'))
-                {
 
-                }
-            }
         },
     });
 </script>
