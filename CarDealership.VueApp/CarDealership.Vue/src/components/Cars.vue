@@ -8,7 +8,7 @@
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAdd" aria-expanded="false" aria-controls="collapseAdd" style="margin:5px;">
                 Add a new car
             </button>
-            <AddCar class="collapse" id="collapseAdd"></AddCar>
+            <AddCar class="collapse" id="collapseAdd" @add-car="addCar"></AddCar>
 
 
             <table class="table table-striped border">
@@ -39,7 +39,7 @@
     import AddCar from './AddCar.vue'
     export default {
         name: 'Cars',
-        emits: ['delete-car'],
+        emits: ['delete-car', 'add-car'],
         components: {
             Car,
             AddCar,
@@ -66,7 +66,7 @@
                 this.loading = true;
 
                 fetch('https://localhost:44301/api/Car')
-                    .then(res => res.json())
+                    .then(res => res.json())    
                     .then(json => {
                         this.post = json;
                         this.loading = false;
@@ -77,9 +77,14 @@
             deleteCar(key) {
                 if (confirm('Are you sure you want to delete?')) {
                     console.log(key);
+                    //Create client side display
                     this.cars = this.cars.filter((car) => car.key !== key);
                 }
-            }
+            },
+            addCar(car) {
+                //Create client side display
+                this.cars = [...this.cars, car]
+            },
         },
 
     }
