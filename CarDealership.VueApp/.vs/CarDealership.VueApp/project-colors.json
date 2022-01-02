@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "f450f664-6fd4-4c6d-bad8-ad76bffcb3e9": {
+      "ProjectGuid": "f450f664-6fd4-4c6d-bad8-ad76bffcb3e9",
+      "DisplayName": "CarDealership.Backend",
+      "ColorIndex": 0
+    },
+    "1a988d38-075c-4ab9-81f4-776901571063": {
+      "ProjectGuid": "1a988d38-075c-4ab9-81f4-776901571063",
+      "DisplayName": "cardealership.vueapp",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "26b4fa7d-9527-4812-bb47-b2937f30379c": {
+      "ProjectGuid": "26b4fa7d-9527-4812-bb47-b2937f30379c",
+      "DisplayName": "CarDealership.Backend",
+      "ColorIndex": 2
+    },
+    "8b93fb80-8413-47f9-b983-dbf4f77eba21": {
+      "ProjectGuid": "8b93fb80-8413-47f9-b983-dbf4f77eba21",
+      "DisplayName": "CarDealership.Backend",
+      "ColorIndex": 3
+    },
+    "d0ce44e7-66f0-46e2-8468-1b5142aa8089": {
+      "ProjectGuid": "d0ce44e7-66f0-46e2-8468-1b5142aa8089",
+      "DisplayName": "CarDealership.Backend",
+      "ColorIndex": 4
+    },
+    "f715b863-7d66-4360-bc66-4570e72fbdac": {
+      "ProjectGuid": "f715b863-7d66-4360-bc66-4570e72fbdac",
+      "DisplayName": "cardealership.vue",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}
