@@ -1,5 +1,5 @@
 <template>
-    <form @submit="onSubmit" class="add-form">
+    <form @submit="onSubmit" class="add-form" style="margin:10px; padding10px;">
         <div class="form-control">
             <label>Brand</label>
             <input type="text"
@@ -21,7 +21,7 @@
                    name="year"
                    placeholder="Add year" />
         </div>
-        <input type="submit" value="Save Car" class="btn btn-block" />
+        <input type="submit" value="Save Car" class="btn btn-primary btn-block" />
     </form>
 </template>
 <script>
