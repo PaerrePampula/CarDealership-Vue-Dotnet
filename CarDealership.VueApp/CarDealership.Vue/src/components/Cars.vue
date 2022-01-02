@@ -78,7 +78,7 @@
                     });
             },
             fetchCar(id) {
-                fetch(`https://localhost:5001/Car`)
+                fetch(`https://localhost:5001/Car/{$id}`)
                     .then(res => res.json())
                     .then(json => {
                         return json.data;
@@ -110,7 +110,7 @@
                 this.cars = [...this.cars, data]
             },
             async editCar(car) {
-                const response = await fetch(`https://localhost:5001/Car/${car.key}`, {
+                await fetch(`https://localhost:5001/Car/${car.key}`, {
                     method: 'PUT',
                     headers:
                     {
