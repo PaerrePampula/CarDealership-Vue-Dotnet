@@ -8,7 +8,7 @@
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseAdd" aria-expanded="false" aria-controls="collapseAdd" style="margin:5px;">
                 Add a new car
             </button>
-            <AddCar class="collapse" id="collapseAdd" @add-car="addCar"></AddCar>
+            <UpsertCar class="collapse" id="collapseAdd" @add-car="addCar" :isEdit=false></UpsertCar>
 
 
             <table class="table table-striped border">
@@ -27,7 +27,7 @@
                     </th>
                 </tr>
                 <tbody v-for="car in cars" :key="car.key">
-                    <Car @delete-car="deleteCar" :car="car" />
+                    <Car @delete-car="deleteCar" @edit-car="editCar" :car="car" />
                 </tbody>
             </table>
         </div>
@@ -36,13 +36,13 @@
 </template>
 <script>
     import Car from './Car.vue'
-    import AddCar from './AddCar.vue'
+    import UpsertCar from './UpsertCar.vue'
     export default {
         name: 'Cars',
-        emits: ['delete-car', 'add-car'],
+        emits: ['delete-car', 'add-car','edit-car'],
         components: {
             Car,
-            AddCar,
+            UpsertCar,
         },
         data() {
             return {
@@ -85,6 +85,12 @@
                 //Create client side display
                 this.cars = [...this.cars, car]
             },
+            editCar(car) {
+                console.log("car edit" + car.brand + car.key)
+                this.cars[car.key].brand = car.brand;
+                this.cars[car.key].model = car.model;
+                this.cars[car.key].year = car.year;
+            }
         },
 
     }

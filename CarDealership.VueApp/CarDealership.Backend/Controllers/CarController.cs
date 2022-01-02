@@ -15,12 +15,21 @@ namespace CarDealership.Backend.Controllers
         }
 
         private readonly CarDBContext Db;
-
+        //GET all cars, so no extra routing
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             return Json(new { data = await Db.Cars.ToListAsync() });
         }
+        //GET single cars, this works by id, so pass in id in route
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> Get(int id)
+        {
+            var result = await Db.Cars.FindAsync(id);
+            return Json(result);
+        }
+        //POST new car, or edit an old one (upsert)
         [HttpPost]
         [ActionName(nameof(Create))]
         public async Task<IActionResult> Create(Car car)
@@ -37,6 +46,7 @@ namespace CarDealership.Backend.Controllers
             await Db.SaveChangesAsync();
             return CreatedAtAction(nameof(Create), new { id = car.Key}, car);
         }
+        //DELETE existing car, or return fail if not found
         [HttpDelete]
         [ActionName(nameof(Delete))]
         public async Task<IActionResult> Delete(int id)

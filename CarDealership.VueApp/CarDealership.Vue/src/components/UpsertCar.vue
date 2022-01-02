@@ -26,12 +26,27 @@
 </template>
 <script>
     export default {
-        name: 'AddCar',
+        name: 'UpsertCar',
+        props: {
+            isEdit: Boolean,
+            car: Object,
+        },
         data() {
             return {
+
                 brand: '',
                 model: '',
                 year: 0,
+
+
+            }
+        },
+        created() {
+            if (this.car != null)
+            {
+                this.brand = this.car.brand;
+                this.model = this.car.model;
+                this.year = this.car.year;
             }
         },
         methods:
@@ -40,20 +55,25 @@
                 //Prevent the website from reloading during the submission
                 event.preventDefault();
                 //Make sure that all fields are filled in.
-                if (!this.brand || !this.model || !this.year)
-                {
+                if (!this.brand || !this.model || !this.year) {
                     alert('Please fill in all required fields!')
                     return
                 }
+
                 //Construct the car object
-                const car = {
-                    id: null,
+                const newCar = {
+                    key: this.isEdit ? this.car.key : null,
                     brand: this.brand,
                     model: this.model,
                     year: this.year,
                 }
                 //the new car object is set up, it needs to be emitted to the cars component above.
-                this.$emit('add-car', car)
+                if (!this.isEdit) {
+                    this.$emit('add-car', newCar)
+                }
+                else {
+                    this.$emit('edit-car', newCar)
+                }
                 //Reset the form fields
                 this.brand = '';
                 this.model = '';
