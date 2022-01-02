@@ -39,7 +39,7 @@
     import UpsertCar from './UpsertCar.vue'
     export default {
         name: 'Cars',
-        emits: ['delete-car', 'add-car','edit-car'],
+        emits: ['delete-car', 'add-car', 'edit-car'],
         components: {
             Car,
             UpsertCar,
@@ -51,10 +51,10 @@
                 post: null
             };
         },
-        created() {
+        async created() {
             // fetch the data when the view is created and the data is
             // already being observed
-            this.fetchData();
+            await this.fetchData();
         },
         watch: {
             // call again the method if the route changes
@@ -64,32 +64,63 @@
             fetchData() {
                 this.post = null;
                 this.loading = true;
-
-                fetch('https://localhost:44301/api/Car')
-                    .then(res => res.json())    
+                //For whatever reason, the solution is unable
+                //to proxy /api/Car... to the target of localhost at 5001, so
+                //I will directly fetch from the url, even though I should
+                //Really use the config as my advantage to reroute this api call.
+                fetch('https://localhost:5001/Car')
+                    .then(res => res.json())
                     .then(json => {
                         this.post = json;
                         this.loading = false;
-                        this.cars = json.data;
-                        return;
+                        this.cars = json.data
+                        return
                     });
             },
-            deleteCar(key) {
+            fetchCar(id) {
+                fetch(`https://localhost:5001/Car`)
+                    .then(res => res.json())
+                    .then(json => {
+                        return json.data;
+                    });
+            },
+            async deleteCar(key) {
                 if (confirm('Are you sure you want to delete?')) {
                     console.log(key);
-                    //Create client side display
-                    this.cars = this.cars.filter((car) => car.key !== key);
+                    const response = await fetch(`https://localhost:5001/Car/${key}`, {
+                        method: 'DELETE'
+                    })
+                    response.status === 201 ? this.cars = this.cars.filter((car) => car.key !== key) : alert("Error in deleting")
+
                 }
             },
-            addCar(car) {
-                //Create client side display
-                this.cars = [...this.cars, car]
+            async addCar(car) {
+                const response = await fetch("https://localhost:5001/Car", {
+                    method: 'POST',
+                    headers:
+                    {
+                        'Content-type': 'application/json',
+
+                    },
+                    body: JSON.stringify(car)
+
+                })
+
+                const data = await response.json()
+                this.cars = [...this.cars, data]
             },
-            editCar(car) {
-                console.log("car edit" + car.brand + car.key)
-                this.cars[car.key].brand = car.brand;
-                this.cars[car.key].model = car.model;
-                this.cars[car.key].year = car.year;
+            async editCar(car) {
+                const response = await fetch(`https://localhost:5001/Car/${car.key}`, {
+                    method: 'PUT',
+                    headers:
+                    {
+                        'Content-type': 'application/json',
+
+                    },
+                    body: JSON.stringify(car)
+
+                })
+                await this.fetchData()
             }
         },
 

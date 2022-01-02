@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace CarDealership.Backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     public class CarController : Controller
     {
         public CarController(CarDBContext db)
@@ -44,10 +44,22 @@ namespace CarDealership.Backend.Controllers
             }
             //Inserting requires to await changes, changes otherwise will not be visible.
             await Db.SaveChangesAsync();
-            return CreatedAtAction(nameof(Create), new { id = car.Key}, car);
+            return CreatedAtAction(nameof(Create), new { id = car.Key }, car);
+        }
+        [HttpPut]
+        [Route("{id}")]
+
+        [ActionName(nameof(Put))]
+        public async Task<IActionResult> Put(int id, Car car)
+        {
+            Db.Cars.Update(car);
+            //Inserting requires to await changes, changes otherwise will not be visible.
+            await Db.SaveChangesAsync();
+            return CreatedAtAction(nameof(Put), new { id = car.Key }, car);
         }
         //DELETE existing car, or return fail if not found
         [HttpDelete]
+        [Route("{id}")]
         [ActionName(nameof(Delete))]
         public async Task<IActionResult> Delete(int id)
         {
@@ -61,7 +73,7 @@ namespace CarDealership.Backend.Controllers
                 Db.Cars.Remove(car);
             }
             await Db.SaveChangesAsync();
-            return CreatedAtAction(nameof(Delete), new { id = id});
+            return CreatedAtAction(nameof(Delete), new { id = id });
         }
     }
 }

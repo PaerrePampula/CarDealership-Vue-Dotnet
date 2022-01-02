@@ -33,20 +33,18 @@
         },
         data() {
             return {
-
+                key: 0,
                 brand: '',
                 model: '',
                 year: 0,
-
-
             }
         },
         created() {
-            if (this.car != null)
-            {
+            if (this.car != null) {
                 this.brand = this.car.brand;
                 this.model = this.car.model;
                 this.year = this.car.year;
+                this.key = this.car.key
             }
         },
         methods:
@@ -59,13 +57,12 @@
                     alert('Please fill in all required fields!')
                     return
                 }
-
                 //Construct the car object
                 const newCar = {
-                    key: this.isEdit ? this.car.key : null,
+                    key: this.isEdit ? this.car.key : 0,
                     brand: this.brand,
                     model: this.model,
-                    year: this.year,
+                    year: parseInt(this.year),
                 }
                 //the new car object is set up, it needs to be emitted to the cars component above.
                 if (!this.isEdit) {
