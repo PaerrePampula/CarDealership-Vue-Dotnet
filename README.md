@@ -1,6 +1,8 @@
 # CarDealership-Vue-Dotnet
 Light web application demoing a car dealership with a dotnet core backend and vue.js front end app
 
+Simply a database api... thing. Features are based on CRUD operations, so you can basically edit, delete or add new cars to the database
+
 # Usage
 In visual studio 2022, simply open the .sln file just inside the parent folder, then start debugging with f5, both the backend API browsing tool and the web app itself should open
 ![i](https://i.imgur.com/nEoQrgd.png)
