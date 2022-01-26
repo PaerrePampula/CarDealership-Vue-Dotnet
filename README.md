@@ -2,7 +2,7 @@
 Light web application demoing a car dealership with a dotnet core backend and vue.js front end app
 
 # Usage
-In visual studio 2022, simply open the .sln file, then start debugging with f5, both the backend API browsing tool and the web app itself should open
+In visual studio 2022, simply open the .sln file just inside the parent folder, then start debugging with f5, both the backend API browsing tool and the web app itself should open
 ![i](https://i.imgur.com/nEoQrgd.png)
 
 # !!!Must be run on Visual Studio 2022 (Made using net 6.0)
