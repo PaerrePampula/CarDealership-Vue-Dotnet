@@ -9,5 +9,7 @@ NOTICE! INCASE OF ZERO CARS, OR IN CASE OF THE BACKEND NOT SIMPLY GETTING ANY DA
 The database in appsettings might already be offline, so to run, you might have to insert some other database there yourself.
 Create a mysql database in a destination of your choosing and add the migrations from the project to this database. Only table needed is the car model
 with brand, model and year information. then replace the database information in appsettings.
+
+
 In visual studio 2022, simply open the .sln file, then start debugging with f5, both the backend API browsing tool and the web app itself should open
 https://i.imgur.com/nEoQrgd.png
