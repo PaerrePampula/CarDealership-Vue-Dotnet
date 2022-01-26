@@ -12,4 +12,4 @@ with brand, model and year information. then replace the database information in
 
 
 In visual studio 2022, simply open the .sln file, then start debugging with f5, both the backend API browsing tool and the web app itself should open
-https://i.imgur.com/nEoQrgd.png
+![i](https://i.imgur.com/nEoQrgd.png)
