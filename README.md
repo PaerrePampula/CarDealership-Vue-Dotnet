@@ -13,4 +13,6 @@ The database in appsettings might already be offline, so to run, you might have 
 Create a mysql database in a destination of your choosing and add the migrations from the project to this database. Only table needed is the car model
 with brand, model and year information. then replace the database information in appsettings.
 
+The connector in the backend is a mysql connector, so a mysql database would be preferrable, but change it if you wish to some other, such as windows sql database
+
 
